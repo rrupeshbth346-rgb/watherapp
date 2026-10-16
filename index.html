@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a36">
+  <title>SkyCast | Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#">
+        <span class="brand-icon">☀</span>
+        <span>Sky<span class="brand-light">Cast</span></span>
+        <span>Rupesh<span class="brand-light"> Chaurasiya</span></span>
+      </a>
+      <span class="live-label"><span></span> LIVE WEATHER</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+      <h1>Weather, <span>at a glance.</span></h1>
+      <p class="subtitle">Discover the weather anywhere in the world.</p>
+
+      <form id="searchForm" class="search-bar">
+        <span class="search-icon">⌕</span>
+        <input id="cityInput" type="text"
+               placeholder="Search a city, e.g. Patna"
+               aria-label="City name" required>
+        <button type="submit" id="searchBtn">Search</button>
+      </form>
+
+      <button id="locationBtn" class="location-btn">
+        ◎ Use my current location
+      </button>
+    </section>
+
+    <p id="message" class="message" role="status"></p>
+
+    <section id="weatherPanel" class="weather-panel" hidden>
+      <div class="weather-top">
+        <div>
+          <p class="eyebrow">CURRENT WEATHER</p>
+          <h2 id="cityName">Patna</h2>
+          <p id="dateText" class="muted"></p>
+        </div>
+        <span id="weatherIcon" class="weather-icon">☀️</span>
+      </div>
+
+      <div class="temperature-row">
+        <div class="temperature">
+          <span id="temperature">--</span><sup>°C</sup>
+        </div>
+        <div class="condition-box">
+          <p id="condition">Clear sky</p>
+          <p class="muted">Feels like <strong id="feelsLike">--°C</strong></p>
+          <p class="muted">H: <span id="highTemp">--°</span>
+            &nbsp; L: <span id="lowTemp">--°</span></p>
+        </div>
+      </div>
+
+      <p id="daySummary" class="summary">
+        Get the latest weather conditions for your city.
+      </p>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-icon">💧</span>
+          <p>Humidity</p>
+          <h3 id="humidity">--%</h3>
+          <small>Air moisture</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon">💨</span>
+          <p>Wind speed</p>
+          <h3 id="wind">-- km/h</h3>
+          <small>Wind conditions</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon">🌡️</span>
+          <p>Feels like</p>
+          <h3 id="feelsStat">--°C</h3>
+          <small>Perceived temperature</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon">☁️</span>
+          <p>Cloud cover</p>
+          <h3 id="clouds">--%</h3>
+          <small>Sky coverage</small>
+        </article>
+      </div>
+
+      <section class="forecast-section">
+        <div class="forecast-heading">
+          <div>
+            <h3>Next 5 days</h3>
+            <p class="muted">Daily forecast</p>
+          </div>
+          <span class="forecast-label">5-DAY OUTLOOK</span>
+        </div>
+        <div id="forecastList" class="forecast-list"></div>
+      </section>
+
+      <p id="updatedText" class="updated-text"></p>
+    </section>
+
+    <footer>
+      <p>SkyCast Weather</p>
+      <p>Created by Rupesh chaurasiya</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
